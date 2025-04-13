@@ -1,0 +1,28 @@
+.wrapper {
+    display: flex;
+    height: 100vh; /* Altura total da tela */
+}
+
+.container {
+    width: 50%; /* 60% da largura */
+    padding: 20px;
+    background-color: #f9f9f9; /* Cor de fundo */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza verticalmente o conteúdo */
+    align-items: center; /* Alinha o conteúdo à esquerda */
+}
+
+.placeholder {
+    flex: 1; /* Metade da tela */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0; /* Cor de fundo */
+}
+
+.placeholder img {
+    max-width: 100%; /* Tamanho da imagem */
+    height: auto;
+    border-radius: 10px; /* Estilo arredondado */
+}
