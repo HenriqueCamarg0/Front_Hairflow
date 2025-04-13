@@ -1,28 +1,51 @@
 .wrapper {
     display: flex;
-    height: 100vh; /* Altura total da tela */
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    overflow: hidden; /* Importante para a animação */
 }
 
-.container {
-    width: 50%; /* 60% da largura */
-    padding: 20px;
-    background-color: #f9f9f9; /* Cor de fundo */
+.container{
+    width: 60%;
+    background-color: #ffffff;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centraliza verticalmente o conteúdo */
-    align-items: center; /* Alinha o conteúdo à esquerda */
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-in-out;
+    transform-style: preserve-3d; /* Importante para o efeito 3D */
 }
 
 .placeholder {
-    flex: 1; /* Metade da tela */
     display: flex;
     justify-content: center;
-    align-items: center;
-    background-color: #e0e0e0; /* Cor de fundo */
+    width: 40%;
+    background-color: #e9ecef;
 }
 
-.placeholder img {
-    max-width: 100%; /* Tamanho da imagem */
-    height: auto;
-    border-radius: 10px; /* Estilo arredondado */
+/* Animação de flip */
+.flip {
+    transform: rotateY(180deg);
+}
+
+/* Ajuste para o conteúdo não ficar espelhado após o flip */
+.flip > * {
+    transform: rotateY(-180deg);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .wrapper {
+        flex-direction: column;
+    }
+
+    .container {
+        width: 100%;
+        padding: 1rem;
+        min-height: 100vh;
+    }
+
+    .placeholder {
+        display: none; /* Oculta a imagem em telas pequenas */
+    }
 }
