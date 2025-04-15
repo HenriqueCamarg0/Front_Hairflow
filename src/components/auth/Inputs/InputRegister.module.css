@@ -1,0 +1,39 @@
+.field {
+    margin-bottom: 1rem;
+}
+
+.labelRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.label {
+    font-weight: 500;
+    color: #344054;
+}
+
+.input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.input:focus {
+    border-color: #7f56d9;
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(127, 86, 217, 0.1);
+}
+
+/* Estilos específicos para campos de registro */
+.input::placeholder {
+    color: #667085;
+}
+
+.input:hover {
+    border-color: #98a2b3;
+}
