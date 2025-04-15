@@ -17,7 +17,7 @@ O projeto está em desenvolvimento ativo, com as seguintes funcionalidades:
 - [x] Formulário de Login Responsivo
 - [x] Navegação para Dashboard
 - [x] Sistema de Registro (em andamento)
-- [] Animação de Transição Login/Registro
+- [ ] Animação de Transição Login/Registro
 
 ### Dashboard 🔄
 - [x] Layout Base
