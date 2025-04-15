@@ -8,14 +8,47 @@ Hair Flow é uma aplicação web desenvolvida para auxiliar na gestão de salõe
 
 ## 🚧 Status do Desenvolvimento
 
-O projeto está em fase inicial de desenvolvimento, com as seguintes funcionalidades em implementação:
+## 🚧 Status do Desenvolvimento
 
+O projeto está em desenvolvimento ativo, com as seguintes funcionalidades:
+
+### Autenticação ✓
 - [x] Interface de Login
-- [ ] Sistema de Cadastro de Usuários
-- [ ] Dashboard Principal
-- [ ] Gestão de Agendamentos
+- [x] Formulário de Login Responsivo
+- [x] Navegação para Dashboard
+- [x] Sistema de Registro (em andamento)
+- [] Animação de Transição Login/Registro
+
+### Dashboard 🔄
+- [x] Layout Base
+- [x] Barra de Navegação Lateral
+- [x] Navegação entre Seções
+- [ ] Widgets de Informações
+- [ ] Métricas do Salão
+
+### Agendamentos 📅
+- [ ] Calendário de Serviços
+- [ ] Formulário de Agendamento
+- [ ] Lista de Agendamentos do Dia
+- [ ] Histórico de Agendamentos
+
+### Funcionários 👥
+- [ ] Cadastro de Funcionários
+- [ ] Perfis de Acesso
+- [ ] Escala de Trabalho
+- [ ] Controle de Comissões
+
+### Serviços 💇‍♀️
+- [ ] Catálogo de Serviços
+- [ ] Precificação
+- [ ] Tempo de Execução
+- [ ] Categorização
+
+### Clientes 👤
 - [ ] Cadastro de Clientes
-- [ ] Controle de Serviços
+- [ ] Histórico de Atendimentos
+- [ ] Preferências
+- [ ] Fidelização
 
 ## 🛠️ Tecnologias Utilizadas
 

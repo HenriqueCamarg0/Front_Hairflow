@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Toolbar from '../components/Shared/Toolbar';
+import Toolbar from '../components/Shared/layout/toolbar/Toolbar';
 
 export default function DashboardPage() {
   const [activeSection, setActiveSection] = useState('dashboard');
