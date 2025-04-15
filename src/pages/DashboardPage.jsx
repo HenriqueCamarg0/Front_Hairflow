@@ -1,24 +1,35 @@
-import React, { useState } from 'react';
-import Toolbar from '../components/Shared/layout/toolbar/Toolbar';
+import React from 'react';
+import Container from '../components/Shared/layout/Container/Container';
+import styles from './DashboardPage.module.css';
 
 export default function DashboardPage() {
-  const [activeSection, setActiveSection] = useState('dashboard');
-
   return (
-    <div style={{ display: 'flex', minHeight: '100vh' }}>
-      {/* Toolbar lateral */}
-      <Toolbar
-        items={['Dashboard', 'Agenda', 'Funcionários', 'Serviços']}
-        onSelect={setActiveSection}
-      />
-
-      {/* Conteúdo dinâmico baseado na seção ativa */}
-      <div style={{ flex: 1, padding: '1rem' }}>
-        {activeSection === 'dashboard' && <h1>Bem-vindo, Administrador!</h1>}
-        {activeSection === 'agenda' && <p>Aqui está sua Agenda.</p>}
-        {activeSection === 'funcionarios' && <p>Gerencie seus Funcionários.</p>}
-        {activeSection === 'servicos' && <p>Edite ou adicione Serviços.</p>}
+    <Container>
+      <div className={styles.dashboard}>
+        <div className={styles.welcomeSection}>
+          <h1>Bem-vindo ao Hair Flow</h1>
+          <p>Painel de Controle</p>
+        </div>
+        
+        <div className={styles.statsGrid}>
+          <div className={styles.statCard}>
+            <h3>Agendamentos Hoje</h3>
+            <p className={styles.statNumber}>12</p>
+          </div>
+          <div className={styles.statCard}>
+            <h3>Clientes Ativos</h3>
+            <p className={styles.statNumber}>150</p>
+          </div>
+          <div className={styles.statCard}>
+            <h3>Serviços</h3>
+            <p className={styles.statNumber}>8</p>
+          </div>
+          <div className={styles.statCard}>
+            <h3>Funcionários</h3>
+            <p className={styles.statNumber}>5</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </Container>
   );
 }

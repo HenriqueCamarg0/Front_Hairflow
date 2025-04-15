@@ -1,29 +1,97 @@
+/* Toolbar principal */
 .toolbar {
-    width: 100%;
-    padding: 1rem;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    align-items: center;
+    width: 220px; /* Largura fixa da barra */
+    background-color: #1d1d1d; /* Azul principal */
+    color: #ffffff; /* Cor do texto */
+    padding: 1rem; /* Espaçamento interno */
+    display: flex; /* Flexbox para layout */
+    flex-direction: column; /* Alinha os itens verticalmente */
+    height: 100vh; /* Ocupa toda a altura da viewport */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    border-right: 1px solid #e0e0e0; /* Linha discreta de separação */
 }
 
+/* Lista de itens */
 .toolbar ul {
-    list-style: none;
+    list-style-type: none; /* Remove os marcadores da lista */
     padding: 0;
     margin: 0;
+}
+
+/* Itens da lista */
+.toolbar ul li {
     display: flex;
-    gap: 1rem;
-}
-
-.toolbar li {
+    align-items: center; /* Alinha o ícone e texto */
+    padding: 0.8rem 1rem;
     cursor: pointer;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    font-weight: 500;
+    border-radius: 5px; /* Bordas arredondadas */
+    margin-bottom: 0.5rem; /* Espaçamento entre os itens */
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.toolbar li:hover {
-    background-color: #e9ecef;
-    color: #007bff;
+/* Ícones dentro dos itens */
+.toolbar ul li svg {
+    font-size: 1.2rem; /* Tamanho dos ícones */
+    margin-right: 0.5rem; /* Espaçamento entre ícone e texto */
 }
+
+/* Texto do item */
+.itemText {
+    font-size: 1rem;
+}
+
+/* Estado de hover */
+.toolbar ul li:hover {
+    background-color: #0056b3; /* Azul mais escuro */
+    color: #ffffff; /* Mantém o texto branco */
+}
+
+/* Estado ativo */
+.toolbar ul li.active {
+    background-color: #0056b3; /* Azul mais escuro */
+    font-weight: bold; /* Destaque no texto */
+    color: #ffffff; /* Mantém o texto branco */
+}
+
+/* Responsividade (telas menores) */
+@media (max-width: 768px) {
+    .toolbar {
+        width: 100%; /* A barra ocupa a largura total */
+        height: auto; /* Ajusta altura automaticamente */
+        flex-direction: row; /* Alinha os itens horizontalmente */
+    }
+
+    .toolbar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .toolbar ul li {
+        margin-bottom: 0; /* Remove o espaço vertical entre os itens */
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem; /* Texto menor para telas pequenas */
+    }
+}
+/* Responsividade (telas menores) */
+@media (max-width: 768px) {
+    .toolbar {
+        width: 100%; /* A barra ocupa a largura total */
+        height: auto; /* Ajusta altura automaticamente */
+        flex-direction: row; /* Alinha os itens horizontalmente */
+    }
+
+    .toolbar ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .toolbar ul li {
+        margin-bottom: 0; /* Remove o espaço vertical entre os itens */
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem; /* Texto menor para telas pequenas */
+    }
+}
+
+/* Responsividade (telas menores) */

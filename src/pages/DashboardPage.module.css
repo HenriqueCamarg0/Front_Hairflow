@@ -1,0 +1,31 @@
+.dashboard {
+    padding: 2rem;
+}
+
+.welcomeSection {
+    background: linear-gradient(to right, #7f56d9, #6941c6);
+    padding: 2rem;
+    border-radius: 12px;
+    color: white;
+    margin-bottom: 2rem;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.statCard {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.statNumber {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #7f56d9;
+    margin-top: 0.5rem;
+}
