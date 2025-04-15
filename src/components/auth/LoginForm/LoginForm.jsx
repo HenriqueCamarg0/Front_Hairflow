@@ -1,8 +1,10 @@
 import React from 'react';
 import styles from './LoginForm.module.css';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function LoginForm({ onLoginClick }) {
-
+  const navigate = useNavigate();
   // Função para lidar com o envio do formulário
   // Aqui você pode adicionar a lógica para autenticação, como chamadas de API
   const handleLogin = (event) => {
@@ -15,6 +17,7 @@ export default function LoginForm({ onLoginClick }) {
     // Exemplo de validação simples
     if (email && password) {
       alert('Login efetuado com sucesso!');
+      navigate('/dashboard');
       console.log('Email:', email, 'Senha:', password);
     } else {
       alert('Por favor, preencha todos os campos!');

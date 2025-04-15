@@ -1,0 +1,29 @@
+.toolbar {
+    width: 100%;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.toolbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.toolbar li {
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.toolbar li:hover {
+    background-color: #e9ecef;
+    color: #007bff;
+}

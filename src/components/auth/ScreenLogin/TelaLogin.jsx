@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import LoginForm from '../LoginForm/LoginForm';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import styles from './TelaLogin.module.css';
-import placeholder from '../../assets/placeholder.svg';
+import placeholder from '../../../assets/placeholder.svg';
+import { useNavigate } from 'react-router-dom';
+
 
 export default function TelaLogin() {
+  const navigate = useNavigate();
+
   const [isLoginView, setIsLoginView] = useState(true);
 
   const handleViewToggle = () => {
