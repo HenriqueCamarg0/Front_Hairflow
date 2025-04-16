@@ -11,7 +11,6 @@ const HeaderComponent = () => {
             </div>
             <div className={Header.profile}>
                 <FaUserCircle className={Header.profileIcon} />
-                <span>Admin Profile</span>
             </div>
         </header>
     );

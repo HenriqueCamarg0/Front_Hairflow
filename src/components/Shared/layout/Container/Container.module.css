@@ -5,6 +5,7 @@
     padding: 0 16px; /* Adiciona espaçamento interno nas laterais */
     box-sizing: border-box; /* Inclui padding e border no tamanho total */
     width: 100%; /* Garante que o container ocupe 100% da largura disponível */
+    
 }
 
 @media (max-width: 768px) {

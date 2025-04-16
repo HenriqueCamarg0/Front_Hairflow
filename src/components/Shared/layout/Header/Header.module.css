@@ -4,9 +4,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 2rem;
-    background-color: #f8f9fa;
+    padding: 2rem 4rem;
+    background-color: hsl(210, 17%, 98%);
     border-bottom: 1px solid #e0e0e0;
+}
+
+.profileIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #1d1d1d;
+    cursor: pointer;
 }
 
 .logo {
