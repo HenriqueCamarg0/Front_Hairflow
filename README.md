@@ -8,8 +8,6 @@ Hair Flow é uma aplicação web desenvolvida para auxiliar na gestão de salõe
 
 ## 🚧 Status do Desenvolvimento
 
-## 🚧 Status do Desenvolvimento
-
 O projeto está em desenvolvimento ativo, com as seguintes funcionalidades:
 
 ### Autenticação ✓
