@@ -5,6 +5,7 @@ import DashboardPage from './pages/DashboardPage/DashboardPage';
 import AgendaPage from './pages/AgendaPage/AgendaPage';
 import ServicosPage from './pages/ServicosPage/ServicosPage';
 import FuncionariosPage from './pages/FuncionariosPage/FuncionariosPage';
+import RegisterForm from './components/auth/RegisterForm/RegisterForm';
 
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/agenda" element={<AgendaPage />} />
         <Route path="/servicos" element={<ServicosPage />} />
         <Route path="/funcionarios" element={<FuncionariosPage />} />
+        <Route path="/register" element={<RegisterForm />} />
       </Routes>
     </Router>
   );

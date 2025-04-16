@@ -4,6 +4,26 @@ import { useNavigate } from 'react-router-dom';
 import InputField from '../Inputs/InputField';
 import GitHubButton from '../Buttons/GitHubButton';
 
+const formFields = [
+  {
+    id: "email",
+    name: "email",
+    label: "Email",
+    type: "email",
+    placeholder: "H@example.com",
+    required: true
+  },
+  {
+    id: "password",
+    name: "password",
+    label: "Password",
+    type: "password",
+    placeholder: "Enter your password",
+    required: true,
+    extraContent: true // Será usado para renderizar o ForgotPasswordButton
+  }
+];
+
 export default function LoginForm({ onLoginClick }) {
   const navigate = useNavigate();
 
@@ -34,24 +54,13 @@ export default function LoginForm({ onLoginClick }) {
         <p>Enter your email below to login to your account</p>
       </div>
 
-      <InputField
-        label="Email"
-        type="email"
-        id="email"
-        name="email"
-        placeholder="H@example.com"
-        required
-      />
-
-      <InputField
-        label="Password"
-        type="password"
-        id="password"
-        name="password"
-        placeholder="Enter your password"
-        required
-        extraContent={<ForgotPasswordButton />}
-      />
+      {formFields.map((field) => (
+        <InputField
+          key={field.id}
+          {...field}
+          extraContent={field.extraContent ? <ForgotPasswordButton /> : null}
+        />
+      ))}
 
       <button type="submit" className={styles.loginButton}>
         Login
@@ -68,7 +77,7 @@ export default function LoginForm({ onLoginClick }) {
         <button 
           type="button" 
           className={styles.signUpButton}
-          onClick={onLoginClick}
+          onClick={() => navigate('/register')} 
         >
           Sign up
         </button>

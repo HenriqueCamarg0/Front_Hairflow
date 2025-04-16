@@ -1,0 +1,83 @@
+.form {
+    width: 100%;
+    max-width: 440px;
+    padding: 2.5rem;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 1.875rem;
+    color: #111827;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    
+}
+
+.header p {
+    color: #6B7280;
+    font-size: 1rem;
+}
+
+.registerButton {
+    width: 100%;
+    padding: 0.875rem;
+    background: #000000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 1.5rem;
+}
+
+.registerButton:hover {
+    background: #6D28D9;
+    transform: translateY(-1px);
+}
+
+.loginContainer {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding-top: 1rem;
+    border-top: 1px solid #E5E7EB;
+}
+
+.loginLink {
+    background: none;
+    border: none;
+    color: #080808;
+    font-weight: 500;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.loginLink:hover {
+    color: #6D28D9;
+    text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+    .form {
+        position: relative;
+        transform: none;
+        top: 0;
+        left: 0;
+        margin: 1rem;
+        padding: 1.5rem;
+        width: calc(100% - 2rem);
+    }
+}

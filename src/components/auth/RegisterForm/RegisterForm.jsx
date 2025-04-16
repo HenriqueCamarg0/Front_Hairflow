@@ -1,32 +1,79 @@
 import React from 'react';
 import styles from './RegisterForm.module.css';
+import InputRegister from '../Inputs/InputRegister';
+import { useNavigate } from 'react-router-dom';
 
-export default function RegisterForm() {
+const formFields = [
+  {
+    id: 'name',
+    name: 'name',
+    label: 'Nome Completo',
+    type: 'text',
+    placeholder: 'Digite seu nome completo',
+    required: true
+  },
+  {
+    id: 'email',
+    name: 'email',
+    label: 'Email',
+    type: 'email',
+    placeholder: 'seu@email.com',
+    required: true
+  },
+  {
+    id: 'password',
+    name: 'password',
+    label: 'Senha',
+    type: 'password',
+    placeholder: 'Digite sua senha',
+    required: true
+  }
+];
 
-    function handleRegister(event) {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const password = formData.get('password');
-        console.log('Name:', name, 'Email:', email, 'Password:', password);
+export default function RegisterForm({ onLoginClick }) {
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData);
+
+    if (data.name && data.email && data.password) {
+      alert('Cadastro realizado com sucesso!');
+      navigate('/login');
+    } else {
+      alert('Por favor, preencha todos os campos!');
     }
+  };
 
-    return (
-        <form onSubmit={handleRegister} className={styles.registerForm}>
-            <div>
-                <label htmlFor="name">Name:</label>
-                <input type="text" id="name" name="name" required />
-            </div>
-            <div>
-                <label htmlFor="email">Email:</label>
-                <input type="email" id="email" name="email" required />
-            </div>
-            <div>
-                <label htmlFor="password">Password:</label>
-                <input type="password" id="password" name="password" required />
-            </div>
-            <button type="submit">Register</button>
-        </form>
-    );
+return (
+    <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.header}>
+            <h1>Create Account</h1>
+            <p>Fill in the details to register</p>
+        </div>
+
+        {formFields.map((field) => (
+            <InputRegister
+                key={field.id}
+                {...field}
+            />
+        ))}
+
+        <button type="submit" className={styles.registerButton}>
+            Register
+        </button>
+
+        <div className={styles.loginContainer}>
+            <p>Already have an account?</p>
+            <button 
+                type="button" 
+                className={styles.loginLink}
+                onClick={() => navigate('/Login')} 
+                >
+                Login
+            </button>
+        </div>
+    </form>
+);
 }
