@@ -1,14 +1,14 @@
 /* Toolbar principal */
 .toolbar {
-    width: 220px; /* Largura fixa da barra */
-    background-color: #1d1d1d; /* cor principal */
+    width: 220px;
+    background-color: #1d1d1d; /* Azul principal */
     color: #ffffff; /* Cor do texto */
     padding: 1rem; /* Espaçamento interno */
     display: flex; /* Flexbox para layout */
     flex-direction: column; /* Alinha os itens verticalmente */
     height: 100vh; /* Ocupa toda a altura da viewport */
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra leve */
     border-right: 1px solid #e0e0e0; /* Linha discreta de separação */
+    position: fixed; /* Fixa a barra na lateral */
 }
 
 /* Lista de itens */
@@ -43,7 +43,6 @@
 /* Estado de hover */
 .toolbar ul li:hover {
     background-color: #0056b3; /* Azul mais escuro */
-    color: #ffffff; /* Mantém o texto branco */
 }
 
 /* Estado ativo */

@@ -1,6 +1,6 @@
 import React from 'react';
-import Container from '../components/Shared/layout/Container/Container';
-import styles from './DashboardPage.module.css';
+import Container from '../../components/Shared/layout/Container/Container';
+import styles from './DashboardPage.module.css'; // Importando o CSS do DashboardPage
 
 export default function DashboardPage() {
   return (

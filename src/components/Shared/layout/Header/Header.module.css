@@ -4,9 +4,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 2rem 4rem;
+    padding: 1rem 2rem;
     background-color: hsl(210, 17%, 98%);
-    border-bottom: 1px solid #e0e0e0;
+    top: 0;
 }
 
 .profileIcon {

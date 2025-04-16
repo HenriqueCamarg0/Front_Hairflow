@@ -1,7 +1,7 @@
 import React from 'react';
-import Container from '../components/Shared/layout/Container/Container';
+import Container from '../../components/Shared/layout/Container/Container';
 
-export function AgendaPage() {
+export default function AgendaPage() {
     return (
         <Container>
         <div style={{ padding: '20px' }}>
