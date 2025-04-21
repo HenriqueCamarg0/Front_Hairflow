@@ -1,5 +1,6 @@
-/* Header.module.css */
-
+/* ========================
+   Estilos gerais do header
+======================== */
 .header {
     display: flex;
     align-items: center;
@@ -9,19 +10,9 @@
     top: 0;
 }
 
-.profileIcon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #1d1d1d;
-    cursor: pointer;
-}
-
+/* ===========================
+   Estilos para o logotipo
+=========================== */
 .logo {
     font-size: 1.5rem;
     font-weight: bold;
@@ -29,6 +20,9 @@
     text-decoration: none;
 }
 
+/* ===========================
+   Estilos da navegação
+=========================== */
 .nav {
     display: flex;
     gap: 1.5rem;
@@ -45,6 +39,9 @@
     color: #007bff;
 }
 
+/* ==============================
+   Botões padrões reutilizáveis
+============================== */
 .button {
     padding: 0.5rem 1rem;
     background-color: #007bff;
@@ -57,4 +54,59 @@
 
 .button:hover {
     background-color: #0056b3;
+}
+
+/* ====================================
+   Estilos para o ícone do usuário
+==================================== */
+.profileIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #1d1d1d;
+    cursor: pointer;
+}
+
+/* ===========================
+   Botão do perfil
+=========================== */
+.profileButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+/* ===========================
+   Menu de opções suspenso
+=========================== */
+.optionsMenu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.option {
+    background: none;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
 }
