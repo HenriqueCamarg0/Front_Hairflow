@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTachometerAlt, FaCalendarAlt, FaUserFriends, FaConciergeBell } from 'react-icons/fa'; // Importando ícones
+import { FaTachometerAlt, FaCalendarAlt, FaUserFriends, FaConciergeBell } from 'react-icons/fa';
 import Styles from './Toolbar.module.css';
 
 export default function Toolbar({ items, onSelect, activeSection }) {
