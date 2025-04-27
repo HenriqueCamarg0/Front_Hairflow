@@ -1,0 +1,80 @@
+.list {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+  }
+  
+  .spinner {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #007bff;
+  }
+  
+  .employeeItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .employeeItem:last-child {
+    border-bottom: none;
+  }
+  
+  .employeeName {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .employeeDetails {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .employeeActions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .buttonDelete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buttonDelete:hover {
+    background-color: #c0392b;
+  }
+  
+  .buttonEdit {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buttonEdit:hover {
+    background-color: #2980b9;
+  }
+  
+  @media (max-width: 768px) {
+    .employeeItem {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .employeeActions {
+      margin-top: 1rem;
+    }
+  }
+  
