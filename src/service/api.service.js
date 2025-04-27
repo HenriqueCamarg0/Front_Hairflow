@@ -1,49 +1,19 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'http://localhost:3000/api',
-    timeout: 5000,
-    headers: {
-        'Content-Type': 'application/json'
-    }
+  baseURL: 'http://localhost:8080/api', // link temporario da sua API
+  headers: {
+    'Content-Type': 'application/json',
+  }
 });
 
-export const apiService = {
-    get: async (url) => {
-        try {
-            const response = await api.get(url);
-            return response.data;
-        } catch (error) {
-            throw error.response?.data || error;
-        }
-    },
-
-    post: async (url, data) => {
-        try {
-            const response = await api.post(url, data);
-            return response.data;
-        } catch (error) {
-            throw error.response?.data || error;
-        }
-    },
-
-    put: async (url, data) => {
-        try {
-            const response = await api.put(url, data);
-            return response.data;
-        } catch (error) {
-            throw error.response?.data || error;
-        }
-    },
-
-    delete: async (url) => {
-        try {
-            const response = await api.delete(url);
-            return response.data;
-        } catch (error) {
-            throw error.response?.data || error;
-        }
-    }
-};
+// Interceptor para adicionar token automaticamente (se quiser depois)
+api.interceptors.request.use((config) => {
+  const token = localStorage.getItem('token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
 
 export default api;

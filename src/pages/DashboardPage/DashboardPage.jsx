@@ -1,5 +1,5 @@
-import React from 'react';
-import Container from '../../components/Shared/layout/Container/Container';
+import React, { useState } from 'react';
+import Container from '../../components/Shared/Layout/Container/Container';
 import styles from './DashboardPage.module.css'; // Importando o CSS do DashboardPage
 
 export default function DashboardPage() {

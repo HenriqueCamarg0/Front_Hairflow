@@ -1,7 +1,4 @@
 .dashboard {
-    margin-left: 250px; /* Respeitando o toolbar */
-    padding-top: 64px; /* Respeitando o header */
-    padding: 2rem; /* Padding interno */
     background-color: #f9fafb;
 }
 

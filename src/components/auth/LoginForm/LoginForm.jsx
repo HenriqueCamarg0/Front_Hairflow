@@ -1,8 +1,9 @@
-import React from 'react';
-import styles from './LoginForm.module.css';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import InputField from '../Inputs/InputField';
+import { AuthService } from '../../../service/auth.service';
+import InputRegister from '../Inputs/InputRegister';
 import GitHubButton from '../Buttons/GitHubButton';
+import styles from './LoginForm.module.css'; // Importando o CSS
 
 const formFields = [
   {
@@ -20,22 +21,26 @@ const formFields = [
     type: "password",
     placeholder: "Enter your password",
     required: true,
-    extraContent: true // Será usado para renderizar o ForgotPasswordButton
+    extraContent: true // Para renderizar o botão de "Forgot Password?"
   }
 ];
 
-export default function LoginForm({ onLoginClick }) {
+export default function LoginForm() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const email = formData.get('email');
-    const password = formData.get('password');
 
-    if (email && password) {
-      alert('Login efetuado com sucesso!');
-      navigate('/dashboard');
+    if (email && senha) {
+      try {
+        const response = await AuthService.login({ email, password: senha });
+        localStorage.setItem('token', response.token); // Armazenando token no localStorage
+        navigate('/dashboard'); // Redireciona para o dashboard após o login bem-sucedido
+      } catch (error) {
+        alert('Erro no login: ' + error.message);
+      }
     } else {
       alert('Por favor, preencha todos os campos!');
     }
@@ -55,10 +60,12 @@ export default function LoginForm({ onLoginClick }) {
       </div>
 
       {formFields.map((field) => (
-        <InputField
+        <InputRegister
           key={field.id}
           {...field}
           extraContent={field.extraContent ? <ForgotPasswordButton /> : null}
+          value={field.name === 'email' ? email : senha}
+          onChange={field.name === 'email' ? (e) => setEmail(e.target.value) : (e) => setSenha(e.target.value)}
         />
       ))}
 
@@ -70,15 +77,11 @@ export default function LoginForm({ onLoginClick }) {
         <span>Or continue with</span>
       </div>
 
-      <GitHubButton />
-      
+      <GitHubButton /> {/* Se você deseja usar o login via GitHub */}
+
       <div className={styles.signUpContainer}>
         <p>Don't have an account?</p>
-        <button 
-          type="button" 
-          className={styles.signUpButton}
-          onClick={() => navigate('/register')} 
-        >
+        <button type="button" className={styles.signUpButton} onClick={() => navigate('/register')}>
           Sign up
         </button>
       </div>

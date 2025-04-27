@@ -1,96 +1,108 @@
-/* Toolbar principal */
-.toolbar {
-    width: 220px;
-    background-color: #1d1d1d; /* Azul principal */
-    color: #ffffff; /* Cor do texto */
-    padding: 1rem; /* Espaçamento interno */
-    display: flex; /* Flexbox para layout */
-    flex-direction: column; /* Alinha os itens verticalmente */
-    height: 100vh; /* Ocupa toda a altura da viewport */
-    border-right: 1px solid #e0e0e0; /* Linha discreta de separação */
-    position: fixed; /* Fixa a barra na lateral */
-}
-
-/* Lista de itens */
-.toolbar ul {
-    list-style-type: none; /* Remove os marcadores da lista */
-    padding: 0;
-    margin: 0;
-}
-
-/* Itens da lista */
-.toolbar ul li {
-    display: flex;
-    align-items: center; /* Alinha o ícone e texto */
-    padding: 0.8rem 1rem;
-    cursor: pointer;
-    border-radius: 5px; /* Bordas arredondadas */
-    margin-bottom: 0.5rem; /* Espaçamento entre os itens */
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-/* Ícones dentro dos itens */
-.toolbar ul li svg {
-    font-size: 1.2rem; /* Tamanho dos ícones */
-    margin-right: 0.5rem; /* Espaçamento entre ícone e texto */
-}
-
-/* Texto do item */
-.itemText {
-    font-size: 1rem;
-}
-
-/* Estado de hover */
-.toolbar ul li:hover {
-    background-color: #0056b3; /* Azul mais escuro */
-}
-
-/* Estado ativo */
-.toolbar ul li.active {
-    background-color: #0056b3; /* Azul mais escuro */
-    font-weight: bold; /* Destaque no texto */
-    color: #ffffff; /* Mantém o texto branco */
-}
-
-/* Responsividade (telas menores) */
-@media (max-width: 768px) {
     .toolbar {
-        width: 100%; /* A barra ocupa a largura total */
-        height: auto; /* Ajusta altura automaticamente */
-        flex-direction: row; /* Alinha os itens horizontalmente */
+        background-color: #1d1d1d;
+        color: white;
+        padding: 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 64px); /* Altura da tela menos a altura do header */
+        border-right: 1px solid #2d2d2d;
+        left: 0;
+        transition: width 0.3s ease;
+        z-index: 1000;
     }
-
-    .toolbar ul {
+    
+    
+    /* Quando a barra está expandida */
+    .toolbarExpanded {
+        width: 220px;
+    }
+    
+    /* Quando a barra está colapsada */
+    .toolbarCollapsed {
+        width: 60px;
+    }
+    
+    /* Botão de alternância */
+    .toggleButton {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin: 1rem auto;
+    }
+    
+    /* Lista de navegação */
+    .navList {
+        list-style: none;
+        padding: 0;
+        margin-top: 2rem;
+    }
+    
+    /* Item de navegação */
+    .navItem {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem 1rem;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.2s ease, padding 0.2s ease;
+    }
+    
+    .navItem:hover {
+        background-color: #2d2d2d;
+    }
+    
+    /* Quando ativo */
+    .active {
+        background-color: #4f46e5;
+        color: white;
+    }
+    
+    /* Wrapper para o ícone */
+    .iconWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    
+    /* Texto do item */
+    .itemText {
+        margin-left: 10px;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+    
+    /* Quando a barra estiver colapsada, escondemos o texto */
+    .toolbarCollapsed .itemText {
+        display: none;
+    }
+    
+    /* Responsivo */
+    @media (max-width: 768px) {
+        .toolbarExpanded, .toolbarCollapsed {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        }
+    
+        .navList {
         display: flex;
         flex-direction: row;
-        justify-content: space-evenly;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 0;
+        }
+    
+        .navItem {
+        padding: 0.5rem;
+        }
+    
+        .toggleButton {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        }
     }
-
-    .toolbar ul li {
-        margin-bottom: 0; /* Remove o espaço vertical entre os itens */
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem; /* Texto menor para telas pequenas */
-    }
-}
-/* Responsividade (telas menores) */
-@media (max-width: 768px) {
-    .toolbar {
-        width: 100%; /* A barra ocupa a largura total */
-        height: auto; /* Ajusta altura automaticamente */
-        flex-direction: row; /* Alinha os itens horizontalmente */
-    }
-
-    .toolbar ul {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-    }
-
-    .toolbar ul li {
-        margin-bottom: 0; /* Remove o espaço vertical entre os itens */
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem; /* Texto menor para telas pequenas */
-    }
-}
-
-/* Responsividade (telas menores) */
+    

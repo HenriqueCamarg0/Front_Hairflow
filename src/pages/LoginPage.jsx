@@ -8,7 +8,7 @@ export default function LoginPage() {
   const handleLogin = () => {
     // Simulação de login bem-sucedido
     console.log('Login realizado!');
-    navigate('/dashboard'); // Redireciona para o Dashboard
+    navigate('/'); // Redireciona para o Dashboard
   };
 
   return (

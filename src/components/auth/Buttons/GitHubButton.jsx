@@ -14,7 +14,7 @@ export default function GitHubButton() {
           fill="currentColor"
         />
       </svg>
-      Login with GitHub
+      Login com GitHub
     </button>
   );
 }

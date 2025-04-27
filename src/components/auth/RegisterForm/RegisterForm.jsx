@@ -1,79 +1,99 @@
-import React from 'react';
-import styles from './RegisterForm.module.css';
-import InputRegister from '../Inputs/InputRegister';
+import { useState } from 'react';
+import { AuthService } from '../../../service/auth.service';
 import { useNavigate } from 'react-router-dom';
+import InputRegister from '../Inputs/InputRegister';
+import styles from './RegisterForm.module.css'; // Importando o CSS para o formulário
 
-const formFields = [
-  {
-    id: 'name',
-    name: 'name',
-    label: 'Nome Completo',
-    type: 'text',
-    placeholder: 'Digite seu nome completo',
-    required: true
-  },
-  {
-    id: 'email',
-    name: 'email',
-    label: 'Email',
-    type: 'email',
-    placeholder: 'seu@email.com',
-    required: true
-  },
-  {
-    id: 'password',
-    name: 'password',
-    label: 'Senha',
-    type: 'password',
-    placeholder: 'Digite sua senha',
-    required: true
-  }
-];
-
-export default function RegisterForm({ onLoginClick }) {
+export default function RegisterForm() {
   const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [nome, setNome] = useState(''); // Novo estado para o nome
+  const [senha, setSenha] = useState('');
+  const [funcao, setFuncao] = useState(''); // Novo estado para a função
+  const [errorMessage, setErrorMessage] = useState('');
 
-  const handleSubmit = (event) => {
+  const handleRegister = async (event) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const data = Object.fromEntries(formData);
 
-    if (data.name && data.email && data.password) {
-      alert('Cadastro realizado com sucesso!');
-      navigate('/login');
+    if (email && nome && senha && funcao) {
+      try {
+        const response = await AuthService.register({ email, nome, password: senha, funcao });
+        localStorage.setItem('token', response.token);
+        navigate('/dashboard');
+      } catch (error) {
+        setErrorMessage('Erro ao realizar o registro. Tente novamente mais tarde.');
+        console.error(error);
+      }
     } else {
-      alert('Por favor, preencha todos os campos!');
+      setErrorMessage('Por favor, preencha todos os campos!');
     }
   };
 
-return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.header}>
-            <h1>Create Account</h1>
-            <p>Fill in the details to register</p>
-        </div>
+  return (
+    <form className={styles.form} onSubmit={handleRegister}>
+      <div className={styles.header}>
+        <h1>Registrar Conta</h1>
+        <p>Preencha as informações abaixo para criar sua conta</p>
+      </div>
 
-        {formFields.map((field) => (
-            <InputRegister
-                key={field.id}
-                {...field}
-            />
-        ))}
+      <InputRegister 
+        label="E-mail" 
+        type="email" 
+        id="email" 
+        name="email" 
+        placeholder="Digite seu e-mail" 
+        required={true}
+        value={email}
+        onChange={(e) => setEmail(e.target.value)} 
+      />
 
-        <button type="submit" className={styles.registerButton}>
-            Register
+      <InputRegister 
+        label="Nome" 
+        type="text" 
+        id="nome" 
+        name="nome" 
+        placeholder="Digite seu Nome" 
+        required={true}
+        value={nome}
+        onChange={(e) => setNome(e.target.value)} 
+      />
+
+      <InputRegister 
+        label="Senha" 
+        type="password" 
+        id="senha" 
+        name="senha" 
+        placeholder="Digite sua senha" 
+        required={true}
+        value={senha}
+        onChange={(e) => setSenha(e.target.value)} 
+      />
+
+      <InputRegister 
+        label="Função" 
+        type="text" 
+        id="funcao" 
+        name="funcao" 
+        placeholder="Digite sua Função" 
+        required={true}
+        value={funcao}
+        onChange={(e) => setFuncao(e.target.value)} 
+      />
+
+      {errorMessage && <div className="error-message">{errorMessage}</div>}  {/* Exibindo erro */}
+
+      <button type="submit" className={styles.registerButton}>Cadastrar</button>
+
+      <div className={styles.loginContainer}>
+        <p>Já tem uma conta?</p>
+        <button 
+          type="button" 
+          className={styles.loginLink}
+          onClick={() => navigate('/login')}
+        >
+          Fazer login
         </button>
-
-        <div className={styles.loginContainer}>
-            <p>Already have an account?</p>
-            <button 
-                type="button" 
-                className={styles.loginLink}
-                onClick={() => navigate('/Login')} 
-                >
-                Login
-            </button>
-        </div>
+      </div>
     </form>
-);
+  );
 }

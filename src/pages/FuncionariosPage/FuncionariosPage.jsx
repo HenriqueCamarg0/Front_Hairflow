@@ -1,5 +1,5 @@
 import React from 'react';
-import Container from '../../components/Shared/layout/Container/Container';
+import Container from '../../components/Shared/Layout/Container/Container';
 import styles from './FuncionariosPage.module.css';
 
 export default function FuncionariosPage() {
