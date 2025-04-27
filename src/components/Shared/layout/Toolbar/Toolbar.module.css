@@ -1,10 +1,8 @@
     .toolbar {
-        background-color: #1d1d1d;
         color: white;
         padding: 1rem 0.5rem;
         display: flex;
         flex-direction: column;
-        height: calc(100vh - 64px); /* Altura da tela menos a altura do header */
         border-right: 1px solid #2d2d2d;
         left: 0;
         transition: width 0.3s ease;

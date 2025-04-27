@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Container from '../../components/Shared/Layout/Container/Container';
 import styles from './DashboardPage.module.css'; // Importando o CSS do DashboardPage
 

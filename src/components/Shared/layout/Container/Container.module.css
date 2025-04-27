@@ -21,7 +21,6 @@
     padding: 1rem 0.5rem;
     display: flex;
     flex-direction: column;
-    border-right: 1px solid #2d2d2d;
     top: 64px; /* Começa logo abaixo do header */
     left: 0;
     transition: width 0.3s ease;

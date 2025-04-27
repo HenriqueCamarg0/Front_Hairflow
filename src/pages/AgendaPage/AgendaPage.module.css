@@ -1,3 +1,294 @@
-.agendaPage {
-    color: black;
-}
+/* appointmentScheduler.css */
+
+/* Layout e estrutura base */
+.appContainer {
+    background-color: #f9fafb;
+    min-height: 100vh;
+  }
+  
+  .appHeader {
+    background: linear-gradient(to right, #1d1d1d, #c64141);
+    border-radius: 12px;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .headerTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .mainContainer {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .mainContainer {
+      padding: 1.5rem;
+    }
+  }
+  
+  /* Card de agendamento */
+  .appointmentCard {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    max-width: 56rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .sectionTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: #1f2937;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Formulário e seus componentes */
+  .formContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formGrid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  @media (min-width: 768px) {
+    .formGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  .formLabel {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+  }
+  
+  .formInput:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  }
+  
+  .timeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .timeButton {
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .timeButton:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .timeButtonSelected {
+    background-color: #3b82f6;
+    color: white;
+    border-color: #3b82f6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  /* Campos de formulário */
+  .formFieldsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .inputContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+  }
+  
+  .inputContainer:focus-within {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.3);
+  }
+  
+  .inputIcon {
+    margin: 0 0.75rem;
+    color: #6b7280;
+  }
+  
+  .inputIconTextarea {
+    margin: 0.75rem 0.75rem 0 0.75rem;
+    color: #6b7280;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 0.75rem;
+    border: none;
+  }
+  
+  .inputField:focus {
+    outline: none;
+  }
+  
+  /* Botões e ações */
+  .formFooter {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 1rem;
+  }
+  
+  .submitButton {
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Modal */
+  .modalOverlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+  }
+  
+  .modalContainer {
+    background-color: white;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    max-width: 28rem;
+    width: 100%;
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .modalTitle {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .modalCloseButton {
+    color: #6b7280;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .modalCloseButton:hover {
+    color: #374151;
+  }
+  
+  .successAlert {
+    background-color: #ecfdf5;
+    border: 1px solid #d1fae5;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .successMessage {
+    display: flex;
+    align-items: center;
+    color: #047857;
+  }
+  
+  .messageText {
+    font-weight: 500;
+  }
+  
+  .appointmentDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .detailItem {
+    display: flex;
+    align-items: center;
+    color: #4b5563;
+  }
+  
+  .detailLabel {
+    font-weight: 500;
+    margin-right: 0.25rem;
+  }
+  
+  .closeButton {
+    width: 100%;
+    background-color: #2563eb;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Utilidades */
+  .iconMargin {
+    margin-right: 0.5rem;
+  }
+  
+  .iconMarginSmall {
+    margin-right: 0.25rem;
+  }
+  
