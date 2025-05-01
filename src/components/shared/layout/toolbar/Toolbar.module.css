@@ -1,0 +1,106 @@
+    .toolbar {
+        color: white;
+        padding: 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid #2d2d2d;
+        left: 0;
+        transition: width 0.3s ease;
+        z-index: 1000;
+    }
+    
+    
+    /* Quando a barra está expandida */
+    .toolbarExpanded {
+        width: 220px;
+    }
+    
+    /* Quando a barra está colapsada */
+    .toolbarCollapsed {
+        width: 60px;
+    }
+    
+    /* Botão de alternância */
+    .toggleButton {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.5rem;
+        cursor: pointer;
+        margin: 1rem auto;
+    }
+    
+    /* Lista de navegação */
+    .navList {
+        list-style: none;
+        padding: 0;
+        margin-top: 2rem;
+    }
+    
+    /* Item de navegação */
+    .navItem {
+        display: flex;
+        align-items: center;
+        padding: 0.8rem 1rem;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.2s ease, padding 0.2s ease;
+    }
+    
+    .navItem:hover {
+        background-color: #2d2d2d;
+    }
+    
+    /* Quando ativo */
+    .active {
+        background-color: #4f46e5;
+        color: white;
+    }
+    
+    /* Wrapper para o ícone */
+    .iconWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+    }
+    
+    /* Texto do item */
+    .itemText {
+        margin-left: 10px;
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+    
+    /* Quando a barra estiver colapsada, escondemos o texto */
+    .toolbarCollapsed .itemText {
+        display: none;
+    }
+    
+    /* Responsivo */
+    @media (max-width: 768px) {
+        .toolbarExpanded, .toolbarCollapsed {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        }
+    
+        .navList {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+        margin-top: 0;
+        }
+    
+        .navItem {
+        padding: 0.5rem;
+        }
+    
+        .toggleButton {
+        position: absolute;
+        top: 0.5rem;
+        right: 1rem;
+        }
+    }
+    

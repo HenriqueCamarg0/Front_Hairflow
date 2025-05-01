@@ -1,0 +1,169 @@
+/* Container da lista */
+.list {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    background: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+  }
+  
+  /* Item da lista de funcionários */
+  .employeeItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem;
+    border-radius: 8px;
+    background: #fff;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .employeeItem:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Nome do funcionário */
+  .employeeName {
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  /* Ações do item (editar e excluir) */
+  .employeeActions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  /* Estilos do botão editar */
+  .buttonEdit {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buttonEdit:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Estilos do botão excluir */
+  .buttonDelete {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .buttonDelete:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Estilo do erro */
+  .error {
+    color: #e74c3c;
+    font-weight: 500;
+    margin-top: 1rem;
+  }
+  
+  /* Modal de edição */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 1rem;
+  }
+  
+  .modalContent {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    animation: slideIn 0.3s ease-in-out;
+  }
+  
+  /* Animação do modal */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Estilo do formulário de edição */
+  .modalContent form input {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+  }
+  
+  .modalContent form input:focus {
+    border-color: #3498db;
+    outline: none;
+  }
+  
+  /* Botão de salvar alterações */
+  .modalContent button[type="submit"] {
+    padding: 1rem;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+  }
+  
+  .modalContent button[type="submit"]:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Botão de cancelar */
+  .cancelButton {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .cancelButton:hover {
+    color: #c0392b;
+  }
+  

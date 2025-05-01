@@ -1,0 +1,14 @@
+.selector {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+label {
+  font-size: 1rem;
+  color: #333;
+}
+
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}

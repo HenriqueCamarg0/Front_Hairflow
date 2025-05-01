@@ -1,0 +1,36 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .header {
+    height: 64px; /* altura do Header */
+    flex-shrink: 0;
+  }
+  
+  .content {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+  }
+  
+  .toolbar {
+    background-color: #1d1d1d;
+    color: white;
+    padding: 1rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    top: 64px; /* Começa logo abaixo do header */
+    left: 0;
+    transition: width 0.3s ease;
+    z-index: 1000;
+  }
+  
+  .mainContent {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 1.5rem;
+    overflow-y: auto;
+  }
+  
