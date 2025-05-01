@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../Header/Header';
-import Toolbar from '../Toolbar/Toolbar';
+import Header from '../header/Header';
+import Toolbar from '../toolbar/Toolbar';
 import styles from './Container.module.css';
 
 export default function Container({ children }) {
