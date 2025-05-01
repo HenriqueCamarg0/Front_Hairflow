@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import EmployeeForm from '../../components/EmployeeForm/EmployeeForm';
 import EmployeeList from '../../components/EmployeeList/EmployeeList';
-import Container from '../../components/Shared/Layout/Container/Container';
+import Container from '../../components/shared/layout/container/Container';
 import styles from './FuncionariosPage.module.css'; 
 
 export default function FuncionariosPage() {
