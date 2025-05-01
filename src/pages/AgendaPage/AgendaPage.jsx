@@ -3,7 +3,6 @@ import { Calendar, Clock, User, Phone, FileText, Check, X } from 'lucide-react';
 import styles from './AgendaPage.module.css';
 import Container from '../../components/Shared/Layout/Container/Container';
 
-
 export default function AgendaPage() {
   const [selectedDate, setSelectedDate] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
