@@ -1,4 +1,4 @@
-import api from './api.service'; // O caminho aqui está correto, se o arquivo realmente for 'api.service.js'
+import api from './api.service'; 
 
 // Cadastrar profissional
 export async function cadastrarFuncionario(funcionarioData) {

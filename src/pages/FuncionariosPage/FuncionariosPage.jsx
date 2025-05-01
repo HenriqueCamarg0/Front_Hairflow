@@ -2,9 +2,10 @@ import { useState } from 'react';
 import EmployeeForm from '../../components/EmployeeForm/EmployeeForm';
 import EmployeeList from '../../components/EmployeeList/EmployeeList';
 import Container from '../../components/Shared/Layout/Container/Container';
+import styles from './FuncionariosPage.module.css'; 
 
 export default function FuncionariosPage() {
-  const [employees, setEmployees] = useState([]);
+  const [setEmployees] = useState([]);
 
   // Função para adicionar um novo funcionário na lista
   function handleEmployeeSubmit(newEmployee) {
@@ -14,8 +15,10 @@ export default function FuncionariosPage() {
   return (
     <Container>
     <div>
-      <h1>Funcionários</h1>
-      <EmployeeForm onSubmit={handleEmployeeSubmit} />
+    <div className={styles.welcomeSection}>
+          <h1>Cadastro de Funcionários</h1>
+        </div>
+       <EmployeeForm onSubmit={handleEmployeeSubmit} />
       <EmployeeList />
     </div>
     </Container>
