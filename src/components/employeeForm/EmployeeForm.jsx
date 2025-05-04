@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import WorkDaysSelector from '../WorkDaysSelector/WorkDaysSelector';
+import WorkDaysSelector from '../workDaysSelector/WorkDaysSelector';
 import styles from './EmployeeForm.module.css';
 import { cadastrarFuncionario } from '../../service/Funcionarios.service';
 

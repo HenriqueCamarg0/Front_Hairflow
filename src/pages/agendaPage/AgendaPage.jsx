@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Calendar, Clock, User, Phone, FileText, Check, X } from 'lucide-react';
 import styles from './AgendaPage.module.css';
-import Container from '../../components/shared/layout/container/container';
+import Container from '../../components/shared/layout/container/Container';
 
 export default function AgendaPage() {
   const [selectedDate, setSelectedDate] = useState('');
