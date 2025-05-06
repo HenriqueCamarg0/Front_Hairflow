@@ -25,3 +25,24 @@
   margin: 0;
   font-size: 2.5rem;
 }
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .pageTitle {
+    font-size: 1.5rem;
+  }
+
+  .welcomeSection {
+    padding: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .welcomeSection h1 {
+    font-size: 1.8rem;
+  }
+}

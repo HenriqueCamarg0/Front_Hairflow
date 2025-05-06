@@ -35,9 +35,12 @@ export default function EmployeeForm({ onSubmit }) {
     setError(null);
     setIsProcessing(true);
 
+    // ✅ Exibe no console o JSON enviado
+    console.log('📤 Enviando para API:', JSON.stringify(formData, null, 2));
+
     try {
       const response = await cadastrarFuncionario(formData);
-      console.log('Funcionário salvo com sucesso:', response);
+      console.log('✅ Funcionário salvo com sucesso:', response);
 
       resetForm();
       onSubmit(response);
@@ -45,9 +48,8 @@ export default function EmployeeForm({ onSubmit }) {
       setTimeout(() => {
         setIsProcessing(false);
       }, 10000);
-
     } catch (err) {
-      console.error('Erro ao salvar funcionário:', err);
+      console.error('❌ Erro ao salvar funcionário:', err);
       setError('Erro ao salvar funcionário. Tente novamente.');
       setIsProcessing(false);
     } finally {
@@ -82,7 +84,7 @@ export default function EmployeeForm({ onSubmit }) {
         className={styles.input}
       />
       <WorkDaysSelector selectedDays={formData.workDays} onChange={handleWorkDaysChange} />
-      
+
       {error && <p className={styles.error}>{error}</p>}
       {loading && <div className={styles.spinner}>Carregando...</div>}
       {isProcessing && <div className={styles.spinner}>Aguarde enquanto processamos...</div>}

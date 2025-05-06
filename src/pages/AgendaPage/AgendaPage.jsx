@@ -8,6 +8,7 @@ export default function AgendaPage() {
   const [selectedTime, setSelectedTime] = useState('');
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
+  const [profissional, setProfissional] = useState('');
   const [description, setDescription] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false);
   
@@ -27,6 +28,7 @@ export default function AgendaPage() {
     setSelectedTime('');
     setName('');
     setPhone('');
+    setProfissional('');
     setDescription('');
   };
 
@@ -118,6 +120,26 @@ export default function AgendaPage() {
               </div>
               
               <div>
+                  <label className={styles.formLabel}>
+                    Profissional 
+                  </label>
+                  <div className={styles.inputContainer}>
+                    <User size={20} className={styles.inputIcon} />
+                    <select
+                      value={profissional}
+                      onChange={(e) => setProfissional(e.target.value)}
+                      className={styles.inputField}
+                      required
+                    >
+                      <option value="" disabled>Selecione o profissional</option>
+                      <option value="Profissional 1">Profissional 1</option>
+                      <option value="Profissional 2">Profissional 2</option>
+                      <option value="Profissional 3">Profissional 3</option>
+                    </select>
+                  </div>
+                </div>          
+              
+              <div>
                 <label className={styles.formLabel}>
                   Descrição
                 </label>
@@ -171,6 +193,10 @@ export default function AgendaPage() {
                 <p className={styles.detailItem}>
                   <User size={16} className={styles.iconMarginSmall} /> 
                   <span className={styles.detailLabel}>Nome:</span> {name}
+                </p>
+                <p className={styles.detailItem}>
+                  <profissional zize={16} className={styles.iconMarginSmall} />
+                  <span className={styles.detailLabel}>Profissional:</span> {profissional}
                 </p>
                 <p className={styles.detailItem}>
                   <Calendar size={16} className={styles.iconMarginSmall} /> 

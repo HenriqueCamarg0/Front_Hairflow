@@ -80,27 +80,35 @@
     /* Responsivo */
     @media (max-width: 768px) {
         .toolbarExpanded, .toolbarCollapsed {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
+            display: flex;
+            flex-direction: column; /* Empilha botão e nav */
+            width: 100%;
+            ;
         }
     
         .navList {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        width: 100%;
-        margin-top: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-top: 0;
+            gap: 0.5rem;
+            cursor: pointer;
         }
     
         .navItem {
         padding: 0.5rem;
+        width: 100%;
         }
     
         .toggleButton {
-        position: absolute;
-        top: 0.5rem;
-        right: 1rem;
+            display: flex;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin: 1rem auto;
         }
     }
     
