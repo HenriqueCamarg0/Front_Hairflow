@@ -3,20 +3,24 @@ import WorkDaysSelector from '../workDaysSelector/WorkDaysSelector';
 import styles from './EmployeeForm.module.css';
 import { cadastrarFuncionario } from '../../service/Funcionarios.service';
 
-export default function EmployeeForm({ onSubmit }) {
+
+export default function EmployeeForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
-    workDays: []
   });
+
+  const [workDays, setWorkDays] = useState([]);
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
 
   function resetForm() {
-    setFormData({ name: '', email: '', phone: '', workDays: [] });
+    setFormData({ name: '', email: '', phone: '' });
+    setWorkDays([]);
+    setIsProcessing(false);
     setError(null);
   }
 
@@ -25,9 +29,10 @@ export default function EmployeeForm({ onSubmit }) {
     setFormData(prev => ({ ...prev, [name]: value }));
   }
 
-  function handleWorkDaysChange(selectedDays) {
-    setFormData(prev => ({ ...prev, workDays: selectedDays }));
-  }
+ const data = {
+    ...formData,
+    workDays,
+  };
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -36,14 +41,15 @@ export default function EmployeeForm({ onSubmit }) {
     setIsProcessing(true);
 
     // ✅ Exibe no console o JSON enviado
-    console.log('📤 Enviando para API:', JSON.stringify(formData, null, 2));
+    console.log('📤 Enviando para API:', JSON.stringify(data, null, 2));
 
     try {
-      const response = await cadastrarFuncionario(formData);
+      const response = await cadastrarFuncionario(data);
       console.log('✅ Funcionário salvo com sucesso:', response);
 
-      resetForm();
-      onSubmit(response);
+      setTimeout(() => {
+        resetForm();
+      }, 1000); // 1000 milissegundos = 1 segundos      
 
       setTimeout(() => {
         setIsProcessing(false);
@@ -83,7 +89,7 @@ export default function EmployeeForm({ onSubmit }) {
         onChange={handleChange}
         className={styles.input}
       />
-      <WorkDaysSelector selectedDays={formData.workDays} onChange={handleWorkDaysChange} />
+      <WorkDaysSelector setWorkDays={setWorkDays} workDays={workDays}/>
 
       {error && <p className={styles.error}>{error}</p>}
       {loading && <div className={styles.spinner}>Carregando...</div>}
