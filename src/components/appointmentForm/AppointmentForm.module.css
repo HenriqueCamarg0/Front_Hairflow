@@ -1,0 +1,251 @@
+.appointmentCard {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sectionTitle {
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 1.5rem;
+  }
+  
+  .iconMargin {
+    margin-right: 0.5rem;
+    color: #2563eb;
+  }
+  
+  .iconMarginSmall {
+    margin-right: 0.25rem;
+  }
+  
+  .formContainer {
+    width: 100%;
+  }
+  
+  .formGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .formGrid {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+  
+  .formLabel {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 0.5rem;
+  }
+  
+  .formInput {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+  }
+  
+  .timeGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.5rem;
+  }
+  
+  .timeButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .timeButton:hover {
+    background-color: #e5e7eb;
+  }
+  
+  .timeButtonSelected {
+    background-color: #dbeafe;
+    border-color: #60a5fa;
+    color: #1e40af;
+  }
+  
+  .formFieldsContainer {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  @media (min-width: 640px) {
+    .formFieldsContainer > div:nth-child(1),
+    .formFieldsContainer > div:nth-child(2),
+    .formFieldsContainer > div:nth-child(3) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+  
+  .inputContainer {
+    position: relative;
+  }
+  
+  .inputIcon {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: #6b7280;
+  }
+  
+  .inputIconTextarea {
+    position: absolute;
+    top: 0.5rem;
+    left: 0.5rem;
+    color: #6b7280;
+  }
+  
+  .inputField {
+    width: 100%;
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-size: 0.875rem;
+  }
+  
+  .formFooter {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .submitButton {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #1d4ed8;
+  }
+  
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 50;
+  }
+  
+  .modalContainer {
+    width: 100%;
+    max-width: 28rem;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .modalTitle {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1f2937;
+  }
+  
+  .modalCloseButton {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+  }
+  
+  .successAlert {
+    background-color: #ecfdf5;
+    border: 1px solid #10b981;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .successMessage {
+    display: flex;
+    align-items: center;
+    color: #047857;
+  }
+  
+  .messageText {
+    margin-left: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .appointmentDetails {
+    background-color: #f9fafb;
+    border-radius: 0.375rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .detailItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+  
+  .detailItem:last-child {
+    margin-bottom: 0;
+  }
+  
+  .detailLabel {
+    font-weight: 500;
+    margin-right: 0.25rem;
+  }
+  
+  .closeButton {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #e5e7eb;
+    color: #4b5563;
+    border: none;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .closeButton:hover {
+    background-color: #d1d5db;
+  }
+  
